@@ -1,0 +1,32 @@
+VAPT Basics
+
+- Gather Website information
+	* whois
+	* ASN NO. - https://bgp.he.net/
+	* Tech stack used - wappalyzer (chrome extension)
+	* /robots.txt
+	* Note down functionalities like Login/Signup, Contact form, like dislike button, upload file option, profile updation, email update, forgot password etc.
+
+- Collect IPs 
+	* Using nmap and 
+	* Website: https://bgp.he.net/
+
+- Collect Subdomains
+	* using the tool: subfinder, ffuf
+	* Some Website: chaos.projectdiscovery.io
+			https://crt.sh/
+			https://securitytrails.com/
+- Live Subdomains
+	* using the tool: httpx
+
+- Collect All link present in website whether its old or new
+	* Tool: waybackurls, subjs, katana
+
+- Filter out the javascript files to find the juicy information
+	* using grep "js$"
+
+- Extracting the sensitive data out of js files
+	* secretFinder
+	* nuclei templates
+
+// cat jsfiles.txt | while read url; do python3 secretFinder/Secretfinder.py -i $url -o cli > secrets.txt; done
